@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Custom aliases
+alias xba="yt-dlp -f bestaudio --extract-audio --audio-format mp3 --audio-quality 0"
+alias rug-code="decrypt.key.sh k.f.reinders@student.rug.nl"
+alias python="python3"
+alias lg="lazygit"
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'

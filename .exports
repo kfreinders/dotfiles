@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Set the openssl directory
+export OPENSSL_DIR="/usr/local/ssl"
+
+# Add TexLive to PATH
+export PATH="/usr/local/texlive/2024/bin/x86_64-linux:$PATH"
+# Set the manpath for texlive
+export MANPATH="/usr/bin/local/texlive/2023/texmf-dist/doc/man:$MANPATH"
+
+# Add Appimages to PATH
+export PATH="$HOME/Applications:$PATH"
+
+# Make nvim the default editor
+export EDITOR="nvim"
+export SUDO_EDITOR="nvim"
+
+# Add jdk to PATH
+export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
+export PATH="$PATH:$JAVA_HOME/bin"
+
+# Enable atuin history
+eval "$(atuin init zsh)"

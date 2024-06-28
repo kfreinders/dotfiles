@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# Compile C code with standard 99 and all warnings
+gcca() {
+    fo="$(basename $1 .c).o"
+    gcc "$1" -o "$fo" -Wall -Wextra -Wpedantic -std=c99
+}
+
+# Encryption and decryption scripts for RUG auth codes
+# Add path to your ~/.2fa/ dir
+export PATH=$PATH:/home/koen/.2fa/
+_decrypt_key_sh(){
+	local services # 2fa services name
+	services=$(find "/home/koen/.2fa/" -type d -printf "%f " | sed 's/.2fa\///')
+	complete -W "$services" decrypt.key.sh
+	complete -W "$services" ~/.2fa/decrypt.key.sh
+}
+complete -F _decrypt_key_sh decrypt.key.sh
+
+# Nicer tree
+function tre() {
+	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
+}
