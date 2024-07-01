@@ -1,0 +1,18 @@
+[init]
+	defaultBranch = main
+[user]
+	name = Koen Reinders
+	email = koenf.reinders@gmail.com
+	signingkey = 746692530AD579A4
+[core]
+	autocrlf = input
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[gpg]
+	program = /usr/bin/gpg
+[credential]
+	helper = store
+[alias]
+lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
