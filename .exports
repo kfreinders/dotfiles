@@ -16,8 +16,12 @@ export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
 
 # Add jdk to PATH
-export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64
-export PATH="$PATH:$JAVA_HOME/bin"
+export JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))
+export PATH=$PATH:$JAVA_HOME/bin
+
+# Add CUDA to path
+export PATH=/usr/local/cuda-12.8/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-12.8/lib64:$LD_LIBRARY_PATH
 
 # Enable atuin history
 eval "$(atuin init zsh)"
