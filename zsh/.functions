@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-# Compile C code with standard 99 and all warnings
-gcca() {
-    fo="$(basename $1 .c).o"
-    gcc "$1" -o "$fo" -Wall -Wextra -Wpedantic -std=c99
-}
-
 # Encryption and decryption scripts for RUG auth codes
 # Add path to your ~/.2fa/ dir
 export PATH=$PATH:/home/koen/.2fa/
